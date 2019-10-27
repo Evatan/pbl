@@ -6,7 +6,8 @@ import { TaskItemComponent } from './task-item/task-item.component';
 import { TaskHeaderComponent } from './task-header/task-header.component';
 import { NewTaskComponent } from "./new-task/new-task.component";
 import { TaskRoutingModule } from "./task.routing.module";
-//import { MatDatepickerModule } from "@angular/material/datepicker";
+import { CopyTaskComponent } from "./copy-task/copy-task.component";
+import { NewTaskListComponent } from "./new-task-list/new-task-list.component";
 
 @NgModule({
   declarations: [
@@ -14,15 +15,18 @@ import { TaskRoutingModule } from "./task.routing.module";
     TaskListComponent, 
     TaskItemComponent, 
     TaskHeaderComponent,
-    NewTaskComponent
+    NewTaskComponent,
+    CopyTaskComponent,
+    NewTaskListComponent
   ],
   imports: [
     SharedModule,
     TaskRoutingModule,
-    //MatDatepickerModule
   ],
   entryComponents:[
-    NewTaskComponent
+    NewTaskComponent,
+    CopyTaskComponent,
+    NewTaskListComponent
   ]
 })
 export class TaskModule { }
