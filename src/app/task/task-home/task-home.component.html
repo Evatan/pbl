@@ -11,10 +11,12 @@
         *ngFor="let task of list.tasks"
         [item]="task"
         (taskClick)="launchTaskClickDialog(task)">
-
-        </app-task-item>
+         </app-task-item>
+        
     </app-task-list>
+    
 </div>
+
 
 <button class="fab-button" mat-fab type="button" (click)="launchNewListDialog()">
     <mat-icon>add</mat-icon>

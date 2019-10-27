@@ -9,6 +9,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { MatIconRegistry } from "@angular/material";
 import { DomSanitizer } from "@angular/platform-browser";
 import { loadSvgResources } from '../utils/svg.util';
+import { AppRoutingModule } from '../app-routing.module';
 
 import 'hammerjs';
 
@@ -21,12 +22,14 @@ import 'hammerjs';
   imports: [
     BrowserAnimationsModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    AppRoutingModule
   ],
   exports:[
     HeaderComponent, 
     FooterComponent, 
     SidebarComponent,
+    AppRoutingModule
   ]
 })
 export class CoreModule {
