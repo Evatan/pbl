@@ -3,8 +3,8 @@ import { BehaviorSubject } from "rxjs";
 import { Observable } from "rxjs";
 
 export interface DragData{
-  tag:string;
-  data:any;
+  tag:string; //标识唯一拖拽
+  data:any; //传递的数据
 }
 
 @Injectable()

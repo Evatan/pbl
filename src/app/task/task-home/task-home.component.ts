@@ -153,7 +153,8 @@ export class TaskHomeComponent implements OnInit {
         console.log('handling item');
         break;
       case 'task-list':
-        console.log('handling list')
+        console.log('handling list');
+        break;
     
       default:
         break;

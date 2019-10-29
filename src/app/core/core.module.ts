@@ -10,7 +10,7 @@ import { MatIconRegistry } from "@angular/material";
 import { DomSanitizer } from "@angular/platform-browser";
 import { loadSvgResources } from '../utils/svg.util';
 import { AppRoutingModule } from '../app-routing.module';
-import { take } from 'rxjs/operators';
+import 'rxjs/operators';
 import 'hammerjs';
 
 @NgModule({
