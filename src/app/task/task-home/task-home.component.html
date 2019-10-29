@@ -6,10 +6,11 @@
     [dragEnterClass]="'drag-enter'"
 
     [appDraggable]="true"
-    [dragTag]="'task-tart'"
+    [dragTag]="'task-list'"
     [draggedClass]="'drag-start'"
     [dragData]="list"
     (dropped)="handleMove($event, list)"
+    [ngStyle]="{'order': list.order}"
 
     *ngFor="let list of lists">
         <app-task-header 
