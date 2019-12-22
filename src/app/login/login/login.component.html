@@ -4,15 +4,15 @@
             <mat-card-title>登录</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-            <form class="example-form">
+            <form class="example-form" [formGroup]="form" (ngSubmit)="onSubmit(form, $event)">
                 <mat-form-field class="example-full-width">
-                    <input matInput type="text" placeholder="请输入您的Email">
+                    <input matInput type="text" placeholder="请输入您的Email" formControlName="email">
                 </mat-form-field>
                 
                 <mat-form-field class="example-full-width">
-                    <input matInput type="password" placeholder="请输入密码">
+                    <input matInput type="password" placeholder="请输入密码" formControlName="password">
                 </mat-form-field>
-                <button mat-raised-button type="button">登录</button>
+                <button mat-raised-button type="submit" [disabled]="!form.valid">登录</button>
             </form>  
         </mat-card-content>
         <mat-card-actions class="text-right">
@@ -23,11 +23,15 @@
     <mat-card>
         <mat-card-header>
             <mat-card-title>PBLSystem</mat-card-title>
-            <mat-card-subtitle>从一个有意义的问题出发，遇到一群志同道合的人。</mat-card-subtitle>
+            <mat-card-subtitle>
+                {{quote.cn}}
+                <!-- 从一个有意义的问题出发，遇到一群志同道合的人。 -->
+            </mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src="/assets/cooperation.png" alt="cooperation">
+        <img mat-card-image [src]="quote.pic" alt="quote image">
         <mat-card-content>
-            <p>项目教学法就是在老师的指导下,将一个相对独立的项目交由学生自己处理，信息的收集、方案的设计、项目实施及最终评价,都由学生自己负责。</p>
+            {{quote.en}}
+            <!-- <p>项目教学法就是在老师的指导下,将一个相对独立的项目交由学生自己处理，信息的收集、方案的设计、项目实施及最终评价,都由学生自己负责。</p> -->
         </mat-card-content>
     </mat-card>
-</div>        
+</div>      

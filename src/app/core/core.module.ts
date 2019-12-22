@@ -12,6 +12,8 @@ import { loadSvgResources } from '../utils/svg.util';
 import { AppRoutingModule } from '../app-routing.module';
 import 'rxjs/operators';
 import 'hammerjs';
+import { HttpModule } from '@angular/http';
+import { ServicesModule } from '../services/services.module';
 
 @NgModule({
   declarations: [
@@ -23,13 +25,22 @@ import 'hammerjs';
     BrowserAnimationsModule,
     HttpClientModule,
     SharedModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule,
+    ServicesModule.forRoot(),
   ],
   exports:[
     HeaderComponent, 
     FooterComponent, 
     SidebarComponent,
     AppRoutingModule
+  ],
+  providers:[
+    {
+      provide:'BASE_CONFIG', useValue: { 
+        uri: 'http://localhost:3000'
+      }
+    }
   ]
 })
 export class CoreModule {
